@@ -90,10 +90,9 @@
                 if (xhr.status == 200) {
                     movies = JSON.parse(xhr.responseText)
                     movies.forEach(movie => {
-                        const movieEl = document.createElement("div")
+                        const movieEl = document.createElement("article")
 
                         movieEl.innerHTML = `
-                        <article>
                         <img src="${movie.Poster}" alt="${movie.Title}">
                         <div>
                             <h3>${movie.Title}</h3>
