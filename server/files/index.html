@@ -88,7 +88,7 @@
             xhr.onload = function () {
                 const bodyElement = document.querySelector("main")
                 if (xhr.status == 200) {
-                    movies = JSON.parse(xhr.responseText)
+                    const movies = JSON.parse(xhr.responseText)
                     movies.forEach(movie => {
                         const movieEl = document.createElement("article")
 
@@ -104,7 +104,7 @@
                             <p>${movie.Plot}</p>
                             <h4>Director</h4>
                             <ul>
-                                ${movie.Directors.map(director => `<li>${director}</li>`).join('')}
+                                ${movie.Directors.map(director => `<li>${director}</li>`).join('')} 
                             </ul>
                             <h4>Writers</h4>
                             <ul>
@@ -115,7 +115,6 @@
                                 ${movie.Actors.map(actor => `<li>${actor}</li>`).join('')}
                             </ul>
                         </div>
-                        </article>
                         `;
                         bodyElement.append(movieEl)
                     })
